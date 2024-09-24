@@ -1,50 +1,118 @@
-# Welcome to your Expo app 👋
+# Flashcards App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cross-platform flashcard and subject notes app built with **React Native** and **Supabase**. The app aims to help students learn efficiently using spaced repetition and subject notes in markdown format. This is the Minimum Viable Product (MVP) with plans for future enhancements such as exam simulation, practicals, and continuous progress tracking.
 
-## Get started
+## Table of Contents
 
-1. Install dependencies
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Future Enhancements](#future-enhancements)
+- [Contributing](#contributing)
+- [License](#license)
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## Features
 
-   ```bash
-    npx expo start
-   ```
+### MVP Features
 
-In the output, you'll find options to open the app in a
+1. **Subject Notes in Markdown**
+   - Render notes in markdown format directly in the app.
+   - Organized by subjects and topics.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+2. **Flashcards**
+   - Flashcards generated from markdown content.
+   - Basic Q&A format.
+   - Ability to save flashcards for spaced repetition.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Future Features (Roadmap)
 
-## Get a fresh project
+1. **Exam View**
+   - Simulate exam scenarios with multiple-choice or short-answer questions.
+   - Timed exams with feedback on performance.
 
-When you're ready, run:
+2. **Practical Simulations**
+   - Interactive practical lessons.
+   - Video guides or step-by-step instructions.
+
+3. **Continuous Monitoring**
+   - Track user progress with detailed stats and feedback.
+   - Spaced repetition algorithm for effective learning.
+
+---
+
+## Technology Stack
+
+- **React Native**: For building a cross-platform mobile app (iOS and Android).
+- **Supabase**: Backend services including authentication, real-time database, and storage.
+- **Markdown Renderer**: `react-native-markdown-display` for rendering markdown content in the app.
+- **State Management**: `Zustand` or `Redux` for managing global state.
+- **Data Fetching**: `React Query` for efficient API requests and caching.
+
+---
+
+## Installation
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable) (optional but recommended)
+- React Native CLI or Expo (depending on your setup)
+
+### Setup
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/flashcards-app.git
+    cd flashcards-app
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    yarn install
+    ```
+
+3. Set up environment variables:
+
+   Create a `.env` file in the root of your project and add your Supabase credentials.
+
+    ```bash
+    SUPABASE_URL=your-supabase-url
+    SUPABASE_ANON_KEY=your-supabase-anon-key
+    ```
+
+4. Run the app:
+
+    For iOS:
+    ```bash
+    yarn ios
+    ```
+
+    For Android:
+    ```bash
+    yarn android
+    ```
+
+---
+
+## Project Structure
 
 ```bash
-npm run reset-project
-```
+📦flashcards-app
+ ┣ 📂assets         # App assets (images, fonts, etc.)
+ ┣ 📂components     # Reusable components (Flashcard, MarkdownViewer, etc.)
+ ┣ 📂screens        # Screens for different app views (HomeScreen, FlashcardsScreen, etc.)
+ ┣ 📂services       # API calls, Supabase interactions
+ ┣ 📂store          # Global state management (using Zustand or Redux)
+ ┣ 📂utils          # Utility functions/helpers
+ ┣ 📂hooks          # Custom React hooks for data fetching, etc.
+ ┣ 📜App.js         # Entry point for the app
+ ┣ 📜README.md      # Project documentation
+ ┗ 📜.env           # Environment variables
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
