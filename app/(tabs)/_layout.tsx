@@ -13,6 +13,12 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
+        tabBarStyle: {
+          paddingBottom: 15,
+          height: 80,
+          borderTopLeftRadius: 25,
+          borderTopRightRadius: 25,
+        }
       }}>
       <Tabs.Screen
         name="index"
@@ -24,14 +30,23 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="courses"
         options={{
-          title: 'Explore',
+          title: 'Courses',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'grid' : 'grid-outline'} color={color} />
           ),
         }}
-      />,
+      />
+      <Tabs.Screen
+        name="progress"
+        options={{
+          title: 'Progress',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'bar-chart' : 'bar-chart-outline'} color={color} />
+          ),
+        }}
+      />
       <Tabs.Screen
         name="settings"
         options={{
